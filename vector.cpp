@@ -90,16 +90,6 @@ int main() {
         std::cout << "5. Exit\n";
         std::cout << "Enter your choice: ";
 
-        // Проверка на корректный ввод числа
-        if (!(cin >> choice)) {
-            std::cin.clear(); // Сброс флага ошибки
-            std::cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Очистка буфера
-            std::cout << "Invalid input. Please enter a number.\n";
-            continue;
-        }
-
-        std::cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Очистка буфера
-
         switch (choice) {
         case 1:
             createAndStore(smartphones, inputSmartphone); // Добавление смартфона

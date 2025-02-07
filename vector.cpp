@@ -3,19 +3,18 @@
 #include <string>
 #include <limits>
 
-
 // Структура для смартфона
 struct Smartphone {
-    string brand;       // Фирма-производитель
-    int storage;        // Объем встроенной памяти (в ГБ)
-    double price;       // Цена
+    std::string brand;       // Фирма-производитель
+    int storage;             // Объем встроенной памяти (в ГБ)
+    double price;            // Цена
 };
 
 // Структура для ноутбука
 struct Laptop {
-    string brand;       // Фирма-производитель
-    string cpuModel;    // Модель процессора
-    bool hasGamingGPU;  // Наличие игровой видеокарты
+    std::string brand;       // Фирма-производитель
+    std::string cpuModel;    // Модель процессора
+    bool hasGamingGPU;       // Наличие игровой видеокарты
 };
 
 // Функция для ввода данных о смартфоне
@@ -30,7 +29,7 @@ void inputSmartphone(Smartphone* phone) {
 
 // Функция для вывода данных о смартфоне
 void printSmartphone(const Smartphone& phone) {
-    std::cout << "Brand: " << phone.brand << ", Storage: " << phone.storage << "GB, Price: $" << phone.price << endl;
+    std::cout << "Brand: " << phone.brand << ", Storage: " << phone.storage << "GB, Price: $" << phone.price << std::endl;
 }
 
 // Функция для ввода данных о ноутбуке
@@ -48,7 +47,7 @@ void inputLaptop(Laptop* laptop) {
         }
         else {
             std::cin.clear(); // Сброс флага ошибки
-            std::cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Очистка буфера
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Очистка буфера
             std::cout << "Invalid input. Please enter 1 for Yes or 0 for No.\n";
         }
     }
@@ -56,12 +55,12 @@ void inputLaptop(Laptop* laptop) {
 
 // Функция для вывода данных о ноутбуке
 void printLaptop(const Laptop& laptop) {
-    std::cout << "Brand: " << laptop.brand << ", CPU Model: " << laptop.cpuModel << ", Gaming GPU: " << (laptop.hasGamingGPU ? "Yes" : "No") << endl;
+    std::cout << "Brand: " << laptop.brand << ", CPU Model: " << laptop.cpuModel << ", Gaming GPU: " << (laptop.hasGamingGPU ? "Yes" : "No") << std::endl;
 }
 
 // Функция для создания динамических экземпляров структур и сохранения их в вектор
 template<typename T>
-void createAndStore(vector<T*>& vec, void (*inputFunc)(T*)) {
+void createAndStore(std::vector<T*>& vec, void (*inputFunc)(T*)) {
     T* item = new T();  // Динамическое создание экземпляра структуры
     inputFunc(item);    // Ввод данных
     vec.push_back(item); // Сохранение в вектор
@@ -69,7 +68,7 @@ void createAndStore(vector<T*>& vec, void (*inputFunc)(T*)) {
 
 // Функция для очистки вектора и освобождения памяти
 template<typename T>
-void clearVector(vector<T*>& vec) {
+void clearVector(std::vector<T*>& vec) {
     for (auto& item : vec) {
         delete item; // Освобождение памяти
     }
@@ -77,8 +76,8 @@ void clearVector(vector<T*>& vec) {
 }
 
 int main() {
-    vector<Smartphone*> smartphones; // Вектор для хранения смартфонов
-    vector<Laptop*> laptops;         // Вектор для хранения ноутбуков
+    std::vector<Smartphone*> smartphones; // Вектор для хранения смартфонов
+    std::vector<Laptop*> laptops;         // Вектор для хранения ноутбуков
     int choice;
 
     while (true) {
@@ -89,6 +88,16 @@ int main() {
         std::cout << "4. View Laptops\n";
         std::cout << "5. Exit\n";
         std::cout << "Enter your choice: ";
+
+        // Проверка на корректный ввод числа
+        if (!(std::cin >> choice)) {
+            std::cin.clear(); // Сброс флага ошибки
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Очистка буфера
+            std::cout << "Invalid input. Please enter a number.\n";
+            continue;
+        }
+
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Очистка буфера
 
         switch (choice) {
         case 1:

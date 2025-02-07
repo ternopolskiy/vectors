@@ -53,19 +53,19 @@
 Ниже приведены скриншоты работы программы:
 
 ### Добавление смартфона
-![Добавление смартфона](https://github.com/ternopolskiy/vectors/blob/main/images/add_laptop.jpg)
+![Добавление смартфона](https://github.com/ternopolskiy/vectors/blob/main/images/add_smartphone.jpg)
 
 ### Добавление ноутбука
-![Добавление ноутбука](https://imgur.com/a/Bc2st7K)
+![Добавление ноутбука](https://github.com/ternopolskiy/vectors/blob/main/images/add_smartphone.jpg)
 
 ### Просмотр списка смартфонов
-![Просмотр смартфонов](https://imgur.com/a/myO7KLd)
+![Просмотр смартфонов](https://github.com/ternopolskiy/vectors/blob/main/images/smartphone_check.jpg)
 
 ### Просмотр списка ноутбуков
-![Просмотр ноутбуков](https://imgur.com/a/ERw4wmQ)
+![Просмотр ноутбуков](https://github.com/ternopolskiy/vectors/blob/main/images/check_laptop.jpg)
 
 ### Выход из программы
-![Выход из программы](https://imgur.com/a/lx4avT5)
+![Выход из программы](https://github.com/ternopolskiy/vectors/blob/main/images/exit.jpg)
 
 ## 7. Вывод
 В ходе выполнения работы были изучены и применены следующие концепции:
@@ -79,4 +79,4 @@
 - Управлять динамической памятью.
 - Организовывать структурированный код с использованием функций и классов.
 
-Данная работа позволила углубить понимание работы с памятью и структурами данных в C++.(Абстрактными типами данных)
+Данная работа позволила углубить понимание работы с памятью и структурами данных в C++. (Абстрактными типами данных)

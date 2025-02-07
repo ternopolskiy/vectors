@@ -1,9 +1,8 @@
-﻿#include <iostream>
+#include <iostream>
 #include <vector>
 #include <string>
 #include <limits>
 
-using namespace std;
 
 // Структура для смартфона
 struct Smartphone {
@@ -21,43 +20,43 @@ struct Laptop {
 
 // Функция для ввода данных о смартфоне
 void inputSmartphone(Smartphone* phone) {
-    cout << "Enter brand: ";
-    cin >> phone->brand;
-    cout << "Enter storage (GB): ";
-    cin >> phone->storage;
-    cout << "Enter price: ";
-    cin >> phone->price;
+    std::cout << "Enter brand: ";
+    std::cin >> phone->brand;
+    std::cout << "Enter storage (GB): ";
+    std::cin >> phone->storage;
+    std::cout << "Enter price: ";
+    std::cin >> phone->price;
 }
 
 // Функция для вывода данных о смартфоне
 void printSmartphone(const Smartphone& phone) {
-    cout << "Brand: " << phone.brand << ", Storage: " << phone.storage << "GB, Price: $" << phone.price << endl;
+    std::cout << "Brand: " << phone.brand << ", Storage: " << phone.storage << "GB, Price: $" << phone.price << endl;
 }
 
 // Функция для ввода данных о ноутбуке
 void inputLaptop(Laptop* laptop) {
-    cout << "Enter brand: ";
-    cin >> laptop->brand;
-    cout << "Enter CPU model: ";
-    cin >> laptop->cpuModel;
+    std::cout << "Enter brand: ";
+    std::cin >> laptop->brand;
+    std::cout << "Enter CPU model: ";
+    std::cin >> laptop->cpuModel;
 
     // Ввод для поля hasGamingGPU
     while (true) {
-        cout << "Has gaming GPU? (1 for Yes, 0 for No): ";
-        if (cin >> laptop->hasGamingGPU) {
+        std::cout << "Has gaming GPU? (1 for Yes, 0 for No): ";
+        if (std::cin >> laptop->hasGamingGPU) {
             break; // Ввод правильный, выходим из цикла
         }
         else {
-            cin.clear(); // Сброс флага ошибки
-            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Очистка буфера
-            cout << "Invalid input. Please enter 1 for Yes or 0 for No.\n";
+            std::cin.clear(); // Сброс флага ошибки
+            std::cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Очистка буфера
+            std::cout << "Invalid input. Please enter 1 for Yes or 0 for No.\n";
         }
     }
 }
 
 // Функция для вывода данных о ноутбуке
 void printLaptop(const Laptop& laptop) {
-    cout << "Brand: " << laptop.brand << ", CPU Model: " << laptop.cpuModel << ", Gaming GPU: " << (laptop.hasGamingGPU ? "Yes" : "No") << endl;
+    std::cout << "Brand: " << laptop.brand << ", CPU Model: " << laptop.cpuModel << ", Gaming GPU: " << (laptop.hasGamingGPU ? "Yes" : "No") << endl;
 }
 
 // Функция для создания динамических экземпляров структур и сохранения их в вектор
@@ -83,23 +82,23 @@ int main() {
     int choice;
 
     while (true) {
-        cout << "\nMenu:\n";
-        cout << "1. Add Smartphone\n";
-        cout << "2. Add Laptop\n";
-        cout << "3. View Smartphones\n";
-        cout << "4. View Laptops\n";
-        cout << "5. Exit\n";
-        cout << "Enter your choice: ";
+        std::cout << "\nMenu:\n";
+        std::cout << "1. Add Smartphone\n";
+        std::cout << "2. Add Laptop\n";
+        std::cout << "3. View Smartphones\n";
+        std::cout << "4. View Laptops\n";
+        std::cout << "5. Exit\n";
+        std::cout << "Enter your choice: ";
 
         // Проверка на корректный ввод числа
         if (!(cin >> choice)) {
-            cin.clear(); // Сброс флага ошибки
-            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Очистка буфера
-            cout << "Invalid input. Please enter a number.\n";
+            std::cin.clear(); // Сброс флага ошибки
+            std::cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Очистка буфера
+            std::cout << "Invalid input. Please enter a number.\n";
             continue;
         }
 
-        cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Очистка буфера
+        std::cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Очистка буфера
 
         switch (choice) {
         case 1:
@@ -110,10 +109,10 @@ int main() {
             break;
         case 3:
             if (smartphones.empty()) {
-                cout << "No smartphones added yet.\n";
+                std::cout << "No smartphones added yet.\n";
             }
             else {
-                cout << "Smartphones:\n";
+                std::cout << "Smartphones:\n";
                 for (const auto& phone : smartphones) {
                     printSmartphone(*phone); // Вывод всех смартфонов
                 }
@@ -121,10 +120,10 @@ int main() {
             break;
         case 4:
             if (laptops.empty()) {
-                cout << "No laptops added yet.\n";
+                std::cout << "No laptops added yet.\n";
             }
             else {
-                cout << "Laptops:\n";
+                std::cout << "Laptops:\n";
                 for (const auto& laptop : laptops) {
                     printLaptop(*laptop); // Вывод всех ноутбуков
                 }
@@ -133,10 +132,10 @@ int main() {
         case 5:
             clearVector(smartphones); // Очистка памяти для смартфонов
             clearVector(laptops);     // Очистка памяти для ноутбуков
-            cout << "Exiting the program.\n";
+            std::cout << "Exiting the program.\n";
             return 0;
         default:
-            cout << "Invalid choice. Please try again.\n";
+            std::cout << "Invalid choice. Please try again.\n";
         }
     }
 

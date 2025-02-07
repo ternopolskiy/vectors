@@ -53,7 +53,7 @@
 Ниже приведены скриншоты работы программы:
 
 ### Добавление смартфона
-![Добавление смартфона](https://imgur.com/a/ffoGz8c)
+![Добавление смартфона]([https://imgur.com/a/ffoGz8c](https://github.com/ternopolskiy/vectors/blob/main/images/add_laptop.jpg))
 
 ### Добавление ноутбука
 ![Добавление ноутбука](https://imgur.com/a/Bc2st7K)

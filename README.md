@@ -56,7 +56,7 @@
 ![Добавление смартфона](https://github.com/ternopolskiy/vectors/blob/main/images/add_smartphone.jpg)
 
 ### Добавление ноутбука
-![Добавление ноутбука](https://github.com/ternopolskiy/vectors/blob/main/images/add_smartphone.jpg)
+![Добавление ноутбука](https://github.com/ternopolskiy/vectors/blob/main/images/add_laptop.jpg)
 
 ### Просмотр списка смартфонов
 ![Просмотр смартфонов](https://github.com/ternopolskiy/vectors/blob/main/images/smartphone_check.jpg)
